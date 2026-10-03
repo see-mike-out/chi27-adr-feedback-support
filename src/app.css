@@ -1,0 +1,117 @@
+:root {
+	--paper: #fbfbf9;
+	--ink: #1b1b19;
+	--ink-soft: #5c5c56;
+	--ink-faint: #8e8e86;
+	--rule: #ddddd6;
+	--rule-strong: #c2c2b9;
+	--field: #ffffff;
+	--mark: #7a4a1e;
+	--danger: #9a2f2f;
+
+	--mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+	--sans: 'Charter', 'Iowan Old Style', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--paper: #16161a;
+		--ink: #e9e9e4;
+		--ink-soft: #a6a69e;
+		--ink-faint: #76766e;
+		--rule: #2e2e33;
+		--rule-strong: #43434a;
+		--field: #1d1d22;
+		--mark: #d9a26a;
+		--danger: #e08383;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	margin: 0;
+}
+
+label {
+	display: block;
+	font-size: 0.8125rem;
+	color: var(--ink-soft);
+	margin-bottom: 0.35rem;
+}
+
+input,
+textarea {
+	width: 100%;
+	font: inherit;
+	font-size: 0.9375rem;
+	color: var(--ink);
+	background: var(--field);
+	border: 1px solid var(--rule);
+	border-radius: 3px;
+	padding: 0.5rem 0.65rem;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 5.25rem;
+	line-height: 1.55;
+}
+
+input:hover,
+textarea:hover {
+	border-color: var(--rule-strong);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+	outline: 2px solid var(--ink);
+	outline-offset: 1px;
+}
+
+button {
+	font: inherit;
+	font-size: 0.875rem;
+	color: var(--ink);
+	background: transparent;
+	border: 1px solid var(--rule-strong);
+	border-radius: 3px;
+	padding: 0.4rem 0.85rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+button:active {
+	transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition: none !important;
+	}
+	button:active {
+		transform: none;
+	}
+}
