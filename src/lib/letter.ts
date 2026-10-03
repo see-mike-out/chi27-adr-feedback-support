@@ -31,7 +31,7 @@ export function buildLetter(draft: Draft): string {
 	const venue = draft.venue.trim() || "CHI'27";
 	const body = CRITERIA.map(
 		({ key, label }) => `${label}: ${draft.fields[key]?.trim() || PLACEHOLDER}`
-	).join('\n');
+	).join('\n\n');
 
 	return `Dear Authors,
 
